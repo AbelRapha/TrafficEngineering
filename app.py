@@ -8,7 +8,7 @@ st.title('Bot EngTráfego 👷‍♂️')
 
 st.write('## Clique no player abaixo para ouvir o áudio livro completo')
 
-audio_file = open("ingest/docs/audiobook.mp3", "rb")
+audio_file = open("./ingest/docs/audiobook.mp3", "rb")
 audio_bytes = audio_file.read()
 
 st.audio(audio_bytes, format="audio/mp3")
