@@ -25,7 +25,8 @@ def format_docs(docs):
 
 llm_prompt_template = """Você agora é um assistente que responderá perguntas sobre o capítulo de um livro relacionado a engenharia de tráfego.
 Sendo assim, apenas utilize do contexto para se basear e criar uma resposta coesa. 
-Sempre responda no idioma Portguês do Brasil.\n
+Sempre responda no idioma Portguês do Brasil.
+Caso você não encontre a resposta diga: 'Desculpe, tente refazer a sua pergunta'.\n
 Contexto: {context} \nPergunta: {question} \nResposta:"""
 
 llm_prompt = PromptTemplate.from_template(llm_prompt_template)
