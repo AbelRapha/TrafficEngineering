@@ -8,7 +8,7 @@ load_dotenv()
 
 loader = TextLoader("ingest/docs/doc.md")
 documents = loader.load()
-text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+text_splitter = CharacterTextSplitter(chunk_size=39000, chunk_overlap=0)
 docs = text_splitter.split_documents(documents)
 
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")

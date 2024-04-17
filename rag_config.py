@@ -16,7 +16,7 @@ embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 docsearch = PineconeVectorStore(embedding = embeddings, index_name=index_name)
 
-retriever = docsearch.as_retriever(search_type="mmr")
+retriever = docsearch.as_retriever(search_type="mmr", search_kwargs={"k": 2})
 
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
